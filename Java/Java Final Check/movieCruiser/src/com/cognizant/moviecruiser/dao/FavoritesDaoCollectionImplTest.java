@@ -16,6 +16,7 @@ public class FavoritesDaoCollectionImplTest{
 		    Favorites f = favoritesDao.getUserFavorites().get((long)1);
             //cartList = cartDao.getAllCartItems(1);
 		    favoritesList = f.getMovieList();
+		    System.out.println("Movie added to favorites successfully");
             for(Movies m : favoritesList){
             	System.out.println(m);
             }
@@ -28,11 +29,16 @@ public class FavoritesDaoCollectionImplTest{
 		ArrayList<Movies> favoritesList;
         try {
             favoritesList = favoritesDao.getAllFavorites(1);
-            System.out.println("Movies");
+            System.out.println("\n\nMovies\n\n");
+            System.out.println(String.format("%-15s %-15s %-15s %-15s %-15s %-15s", "Movie ID","Title","Active","Date of Launch","Genre","Has Teaser"));
+            System.out.println("============================================================================================");
+            System.out.println();
             for(Movies m : favoritesList){ 
             	System.out.println(m);
             }
-            System.out.println("No. of favorites ="+favoritesList.size());
+            System.out.println("\n============================================================================================");
+
+            System.out.println("\nNo. of favorites : "+favoritesList.size());
             
         } catch (FavoritesException e) { 
         	System.out.println(e);
@@ -43,6 +49,7 @@ public class FavoritesDaoCollectionImplTest{
 		System.out.println();
 		favoritesDao.removeFavorites(1, 1);
 		try {
+		System.out.println("Movie removed from favourites successfully");
 		favoritesDao.getAllFavorites(1);
 		} catch (FavoritesException e) {  System.out.println(e);}
 		
