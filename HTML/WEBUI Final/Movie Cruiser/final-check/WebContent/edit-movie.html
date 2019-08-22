@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<head>
+	<link rel="stylesheet" href="style\style.css">
+	<script src="js\script.js"></script>
+	<title>Movie Cruiser</title>
+</head>
+<header> Movie Cruiser
+	 <img src="images\film-roll.png"/>
+	 <nav>
+		<a href="movie-list-admin.html" class="anchor">Movies</a>
+	 </nav>
+</header>
+
+<article>
+<p>Edit Movie</p>
+<form name="edit-movie" action="edit-movie-status.html" onsubmit="return validation();">
+<table >
+	<tr>
+		<label for="username" class="edit-movie-labels">Title</label>
+	</tr>
+	<tr>
+		<input type="text" id="username" name="title" placeholder="Avengers - End Game">
+	</tr>
+</table>
+	
+<table class="table1">
+	<tr>
+		<td class="edit-movie-labels"><label for="gross">Box Office</label></td>
+		<td class="edit-movie-labels">Active</td>
+		<td class="edit-movie-labels"><label for="DOL">Date of Launch</label></td>
+		<td class="edit-movie-labels"><label for="genre">Genre</label></td>
+	</tr>
+	
+	<tr>
+		<td><input type="text" id="gross" name="boxOffice" class="right" placeholder="2787965087"></td>
+		<td><input type="radio" class="yes" name="active" checked><label for="yes" >Yes</label><input type="radio" class="no" name="active"><label for="no">No</label></td>	
+		<td><input type="date" name="dateOfLaunch" id="DOL"></td>
+		<td>
+			<select name="genre" id="genre">
+				<option value="Science Fiction">Science Fiction</option>
+				<option value="Superhero" selected>Superhero</option>
+				<option value="Romance">Romance</option>
+				<option value="Comedy">Comedy</option>
+				<option value="Adventure">Adventure</option>
+				<option value="Thriller">Thriller</option>
+			</select>
+		</td>
+	</tr>
+	
+</table>
+<br>
+<table>
+	<input type="checkbox" class="check" name="hasTeaser" checked><label for="has-teaser" class="edit-movie-labels">Has Teaser</label>
+</table>
+<br>
+<table>
+	<input type="submit" class="save" value="Save">
+</table>
+</form>
+</article>
+
+<footer> Copyright &copy; 2019 </footer>
+</html>
