@@ -16,6 +16,13 @@ class Employee{
 		this.age = age;
 		this.salary = salary;
 	}
+
+
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", name=" + name + ", age=" + age + ", salary=" + salary + "]";
+	}
+	
 	
 }
 
@@ -37,8 +44,7 @@ public class Question_3 {
 		
 		 employees.stream()  
          .filter(p ->p.age< 30)   // filtering price  
-         .map(pm ->pm.age)          // fetching price
-         .forEach(System.out::println);  // iterating price  
+         .forEach(employee -> System.out.println(employee));
 		
 	}
 
