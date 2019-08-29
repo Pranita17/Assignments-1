@@ -82,7 +82,8 @@ public class CartDaoCollectionImpl implements CartDao {
                 {
                     double price = m.getPrice();
                     cartList.remove(m);
-                    Cart x = new Cart(cartList, userCarts.get(userId).getTotal()-price);
+                    double total = userCarts.get(userId).getTotal()-price;
+                    Cart x = new Cart(cartList, total);
                     userCarts.put(userId, x);
                     break;
                 }

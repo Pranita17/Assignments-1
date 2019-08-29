@@ -34,7 +34,9 @@ public class RemoveCartServlet extends HttpServlet {
 		ArrayList<MenuItem> cartList = new ArrayList<MenuItem>();
 		try {
 			cartList = cartDao.getAllCartItems(userId);
+			double total = cartDao.getUserCarts().get(userId).getTotal();
 			request.setAttribute("customerCartList", cartList);
+			request.setAttribute("cartTotal", total);
 			request.getServletContext().getRequestDispatcher("/cart.jsp").forward(request, response);
 		} catch (CartEmptyException e) {
 			request.getServletContext().getRequestDispatcher("/cart-empty.jsp").forward(request, response);
