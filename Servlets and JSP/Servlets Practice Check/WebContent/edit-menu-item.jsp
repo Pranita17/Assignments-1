@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <head>
 	<link rel="stylesheet" href="style\style.css">
-	<script src="js\script.js"></script>
+	<script type="text/javascript" src="js\script.js"></script>
 	<title>truYum</title>	
 </head>
 <header> truYum

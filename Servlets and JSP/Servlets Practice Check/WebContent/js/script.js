@@ -1,9 +1,9 @@
 function validation(){
 
-	var title = document.forms["edit-menu"]["title"].value;
-  	var price = document.forms["edit-menu"]["price"].value;
-  	var dateOfLaunch = document.forms["edit-menu"]["dateOfLaunch"].value;
-  	var category = document.forms["edit-menu"]["category"].value;
+	var title = document.forms["menuItemForm"]["title"].value;
+  	var price = document.forms["menuItemForm"]["price"].value;
+  	var dateOfLaunch = document.forms["menuItemForm"]["dateOfLaunch"].value;
+  	var category = document.forms["menuItemForm"]["category"].value;
   	
 	if(title == "") {
 		alert("Title cannot be empty");
