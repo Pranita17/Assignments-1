@@ -7,8 +7,8 @@ import com.cognizant.truyum.model.MenuItem;
 
 public class CartDaoCollectionImpl implements CartDao {
 	
-	private HashMap<Long, Cart> userCarts;
-	CartDaoCollectionImpl()
+	private static HashMap<Long, Cart> userCarts;
+	public CartDaoCollectionImpl()
 	{
 		if(userCarts == null)
 		{
@@ -17,6 +17,7 @@ public class CartDaoCollectionImpl implements CartDao {
 		
 	}
 	
+		
 	@Override
 	public void addCartItem(long userId, long menuItemId){
 		MenuItemDaoCollectionImpl menuItemDao = new MenuItemDaoCollectionImpl();
@@ -66,9 +67,6 @@ public class CartDaoCollectionImpl implements CartDao {
         return userCarts;
     }
 
-    public void setUserCarts(HashMap<Long, Cart> userCarts) {
-        this.userCarts = userCarts;
-    }
 
     @Override
 	public void removeCartItem(long userId, long menuItemId)  {

@@ -10,7 +10,7 @@
 <header> truYum
 	 <img src="images\truyum-logo-light.png"/>
 	 <nav>
-		<a href="menu-item-list-admin.html" class="anchor">Menu</a>
+		<a href="ShowMenuItemListAdmin" class="anchor">Menu</a>
 	 </nav>
 </header>
 
