@@ -16,7 +16,7 @@
 
 <article>
 <p class="menu">Edit Menu Item</p>
-<form name="edit-menu" action="edit-menu-item-status.html" onsubmit="return validation();">
+<form name="menuItemForm" action="EditMenuItem" method="post" onsubmit="return validation();">
 <table >
 	<tr>
 		<label for="username" class="edit-menu-labels"> Name</label>
@@ -36,8 +36,9 @@
 	
 	<tr>
 		<td><input type="text" id="price" name="price" class="right" value="${EditMenuItem.price}"></td>
-		<td> &nbsp&nbsp&nbsp <input type="radio" class="yes" name="inStock" <c:if test="${EditMenuItem.active}">checked</c:if>><label for="yes">Yes</label><input type="radio" class="no" name="inStock" <c:if test="${EditMenuItem.active == false}">checked</c:if>><label for="no">No</label></td>	
-		<td><input type="text" name="dateOfLaunch" value="<fmt:formatDate pattern="dd/MM/yyyy" value="${EditMenuItem.dateOfLaunch}"/>"></td>
+		<td> &nbsp&nbsp&nbsp <input type="radio" class="yes" name="inStock" value="true" <c:if test="${EditMenuItem.active}">checked</c:if>><label for="yes">Yes</label><input type="radio" class="no" name="inStock" value="false" <c:if test="${EditMenuItem.active == false}">checked</c:if>><label for="no">No</label></td>	
+		<fmt:formatDate pattern="dd/MM/yyyy" value="${EditMenuItem.dateOfLaunch}" var="DOL_fmt"/>
+		<td><input type="text" name="dateOfLaunch" value="${DOL_fmt}"></td>
 		<td>
 			<select name="category">
 				<option value="Starters" <c:if test="${EditMenuItem.category == 'Starters'}">selected</c:if>>Starters</option>
@@ -51,12 +52,13 @@
 </table>
 <br>
 <table>
-	<input type="checkbox" class="check" name="freeDelivery" <c:if test="${EditMenuItem.freeDelivery}">checked</c:if>><label for="free-delivery" class="edit-menu-labels">Free Delivery</label>
+	<input type="checkbox" class="check" name="freeDelivery" value="true" <c:if test="${EditMenuItem.freeDelivery}">checked</c:if>><label for="free-delivery" class="edit-menu-labels">Free Delivery</label>
 </table>
 <br>
 <table>
 	<input type="submit" class="save" value="Save">
 </table>
+<input type="hidden" name = "menuId" value = "${EditMenuItem.id}"/>
 </form>
 </article>
 

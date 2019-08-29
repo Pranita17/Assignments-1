@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class AddToCartServlet
  */
-@WebServlet("/AddToCartServlet")
+@WebServlet("/AddToCart")
 public class AddToCartServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
