@@ -22,7 +22,7 @@
 		<label for="username" class="edit-menu-labels"> Name</label>
 	</tr>
 	<tr>
-		<input type="text" id="username" name="title" value="${menuItem.name}">
+		<input type="text" id="username" name="title" value="${EditMenuItem.name}">
 	</tr>
 </table>
 	
@@ -35,15 +35,15 @@
 	</tr>
 	
 	<tr>
-		<td><input type="text" id="price" name="price" class="right" placeholder="97"></td>
-		<td> &nbsp&nbsp&nbsp <input type="radio" class="yes" name="inStock" checked><label for="yes">Yes</label><input type="radio" class="no" name="inStock"><label for="no">No</label></td>	
-		<td><input type="text" name="dateOfLaunch" placeholder="DD/MM/YYYY" required pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}"></td>
+		<td><input type="text" id="price" name="price" class="right" value="${EditMenuItem.price}"></td>
+		<td> &nbsp&nbsp&nbsp <input type="radio" class="yes" name="inStock" <c:if test="${EditMenuItem.active}">checked</c:if>><label for="yes">Yes</label><input type="radio" class="no" name="inStock" <c:if test="${EditMenuItem.active == false}">checked</c:if>><label for="no">No</label></td>	
+		<td><input type="text" name="dateOfLaunch" value="<fmt:formatDate pattern="dd/MM/yyyy" value="${EditMenuItem.dateOfLaunch}"/>"></td>
 		<td>
 			<select name="category">
-				<option value="Starters">Starters</option>
-				<option value="Main Course">Main Course</option>
-				<option value="Dessert">Dessert</option>
-				<option value="Drinks">Drinks</option>
+				<option value="Starters" <c:if test="${EditMenuItem.category == 'Starters'}">selected</c:if>>Starters</option>
+				<option value="Main Course" <c:if test="${EditMenuItem.category == 'Main Course'}">selected</c:if>>Main Course</option>
+				<option value="Dessert" <c:if test="${EditMenuItem.category == 'Dessert'}">selected</c:if>>Dessert</option>
+				<option value="Drinks" <c:if test="${EditMenuItem.category == 'Drinks'}">selected</c:if>>Drinks</option>
 			</select>
 		</td>
 	</tr>
@@ -51,7 +51,7 @@
 </table>
 <br>
 <table>
-	<input type="checkbox" class="check" name="freeDelivery" checked><label for="free-delivery" class="edit-menu-labels">Free Delivery</label>
+	<input type="checkbox" class="check" name="freeDelivery" <c:if test="${EditMenuItem.freeDelivery}">checked</c:if>><label for="free-delivery" class="edit-menu-labels">Free Delivery</label>
 </table>
 <br>
 <table>

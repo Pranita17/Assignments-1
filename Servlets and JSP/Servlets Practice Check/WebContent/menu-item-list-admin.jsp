@@ -40,10 +40,7 @@
          value = "${menuItem.dateOfLaunch}" /></td>
 		<td>${menuItem.category}</td>
 		<td>${menuItem.freeDelivery}</td>
-		<form action="ShowEditMenuItem" method="get" id="${menuItem.name}">
-		<input type="hidden" name="menuItemId" value="${menuItem.id}"/>
-		<td><a href="#" onclick="document.getElementById('${menuItem.name}').submit();">Edit</a>
-		</form>
+		<td><a href="ShowEditMenuItem?menuItemId=${menuItem.id}" >Edit</a>
 		</td>
 	</tr>
 	</c:forEach>
